@@ -1,8 +1,7 @@
-# MATLAB Spring 2014 – Research Plan (Template)
-(text between brackets to be removed)
+# MATLAB Spring 2014 – Research Plan
 
-> * Group Name: (be creative!)
-> * Group participants names: (alphabetically sorted by last name)
+> * Group Name: (noch nicht existent)
+> * Group participants names: Lukas Bosshart, Damian Kissling
 > * Project Title: (can be changed)
 
 ## General Introduction
