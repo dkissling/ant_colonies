@@ -1,14 +1,14 @@
 # MATLAB Spring 2014 – Research Plan
 
-> * Group Name: (noch nicht existent)
+> * Group Name: ****
 > * Group participants names: Lukas Bosshart, Damian Kissling
-> * Project Title: (can be changed)
+> * Project Title: Trail simulation for national roads between major swiss cities
 
 ## General Introduction
 
-(States your motivation clearly: why is it important / interesting to solve this problem?)
-(Add real-world examples, if any)
-(Put the problem into a historical context, from what does it originate? Are there already some proposed solutions?)
+Our group wants to simulate a possible road-system which could connect major swiss cities in an effective way depending on their population, as well as the distance and the geographical limitations between them.
+The goal is to compare the simulated solution with the actual road-system.
+Todo: [ ] Put the problem into a historical context, from what does it originate
 
 ## The Model
 
