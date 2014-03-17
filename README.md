@@ -1,14 +1,14 @@
 # MATLAB Spring 2014 – Research Plan
 
-> * Group Name: ****
-> * Group participants names: Lukas Bosshart, Damian Kissling
-> * Project Title: Trail simulation for national roads between major swiss cities
+* Group Name: Pineapple
+* Group participants names: Lukas Bosshart, Damian Kissling
+* Project Title: Trail simulation for national roads between major swiss cities
 
 ## General Introduction
 
-Our group wants to simulate a possible road-system which could connect major swiss cities in an effective way depending on their population, as well as the distance and the geographical limitations between them.
-The goal is to compare the simulated solution with the actual road-system.
-Todo: [ ] Put the problem into a historical context, from what does it originate
+Wir simulieren die Nahrungsgewinnung von Ameisen. Wir kreieren dazu vier Ameisenstämme mit unterschiedlichen Verhaltensmustern. Weiter definieren wir vier unterschiedliche Nahrungsgewinnungsszenarien. 
+Sie unterscheiden sich durch unterschiedliche Nahrungsdichte und Störfaktoren, wie Umwelteinflüsse, Hindernisse und Jäger.
+
 
 ## The Model
 
@@ -17,20 +17,22 @@ Todo: [ ] Put the problem into a historical context, from what does it originate
 
 ## Fundamental Questions
 
-(At the end of the project you want to find the answer to these questions)
-(Formulate a few, clear questions. Articulate them in sub-questions, from the more general to the more specific. )
+* Welcher Ameisenstamm hat die besten Eigenschaften?
+* Welche Eigenschaften sind stärker zu gewichten als andere?
+* Gibt es parallelen zu vorhandene Ameisenstämmen? 
 
 
 ## Expected Results
 
-(What are the answers to the above questions that you expect to find before starting your research?)
+Ameisen, die in Teamarbeit Nahrung beschaffen und mittels Pheromonen kommunizieren, arbeiten effizienter.
 
 
 ## References 
 
-(Add the bibliographic references you intend to use)
-(Explain possible extension to the above models)
-(Code / Projects Reports of the previous year)
+* Camazin2001-chapter13.pdf
+* Modelling_Evolution_of_Human_Trail_Systems-Helbing1997.pdf
+* (Explain possible extension to the above models)
+* (Code / Projects Reports of the previous year)
 
 
 ## Research Methods
