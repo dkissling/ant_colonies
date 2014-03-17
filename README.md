@@ -1,14 +1,13 @@
-# MATLAB Spring 2014 – Research Plan
+﻿# MATLAB Spring 2014 – Research Plan
 
 * Group Name: Pineapple
 * Group participants names: Lukas Bosshart, Damian Kissling
-* Project Title: Trail simulation for national roads between major swiss cities
+* Project Title: Simulation of different behaving ant colonies
 
 ## General Introduction
 
-Wir simulieren die Nahrungsgewinnung von Ameisen. Wir kreieren dazu vier Ameisenstämme mit unterschiedlichen Verhaltensmustern. Weiter definieren wir vier unterschiedliche Nahrungsgewinnungsszenarien. 
-Sie unterscheiden sich durch unterschiedliche Nahrungsdichte und Störfaktoren, wie Umwelteinflüsse, Hindernisse und Jäger.
-
+Our aim is, to simulate the gathering of food for ants. Therefore we create four ant colonies with different ant-behaviour. 
+Further we will define four different environments for the food fight of the ant-colonies. They are different in food density and challenges like predators or environmental factors.
 
 ## The Model
 
@@ -17,14 +16,14 @@ Sie unterscheiden sich durch unterschiedliche Nahrungsdichte und Störfaktoren, 
 
 ## Fundamental Questions
 
-* Welcher Ameisenstamm hat die besten Eigenschaften?
-* Welche Eigenschaften sind stärker zu gewichten als andere?
-* Gibt es parallelen zu vorhandene Ameisenstämmen? 
+* Which ant colony has the best properties and is therefore the most efficient?
+* Which properties have a greater influence on the outcome of the simulation?
+* Are there any parallels to actual ants?
 
 
 ## Expected Results
 
-Ameisen, die in Teamarbeit Nahrung beschaffen und mittels Pheromonen kommunizieren, arbeiten effizienter.
+We expect, that the colonies that have a stronger focus on teamwork (with the use of pheromones) will have a big advantage and will work more efficient.
 
 
 ## References 
