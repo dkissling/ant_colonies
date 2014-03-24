@@ -1,4 +1,4 @@
-﻿# MATLAB Spring 2014 – Research Plan
+# MATLAB Spring 2014 – Research Plan
 
 * Group Name: Pineapple
 * Group participants names: Lukas Bosshart, Damian Kissling
@@ -11,7 +11,7 @@ Further we will define four different environments for the food fight of the ant
 
 ## The Model
 
-(Define dependent and independent variables you want to study. Say how you want to measure them.) (Why is your model a good abtraction of the problem you want to study?) (Are you capturing all the relevant aspects of the problem?)
+Agent-Based Model
 
 
 ## Fundamental Questions
@@ -30,15 +30,19 @@ We expect, that the colonies that have a stronger focus on teamwork (with the us
 
 * Camazin2001-chapter13.pdf
 * Modelling_Evolution_of_Human_Trail_Systems-Helbing1997.pdf
-* (Explain possible extension to the above models)
+* Figs.doc (other/)
+* Recruitment_MS.doc (other/)
+* http://www.ncbi.nlm.nih.gov/pubmed/23749328
+* http://de.wikipedia.org/wiki/Cataglyphis
+* http://antme.net
 * (Code / Projects Reports of the previous year)
 
 
 ## Research Methods
 
-(Cellular Automata, Agent-Based Model, Continuous Modeling...) (If you are not sure here: 1. Consult your colleagues, 2. ask the teachers, 3. remember that you can change it afterwards)
+
 
 
 ## Other
 
-(mention datasets you are going to use)
+
