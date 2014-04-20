@@ -21,16 +21,20 @@ Field_1 = zeros(n);
 base = floor([n/2;n/2]);
 
 % Position der Ant-Agents
-% pos(y-Koordinate,x-Koordinate,Index)
-pos = zeros(3,m);
+% pos(y-Koordinate,x-Koordinate)
+pos = zeros(2,m);
+phi = 2*rand(1,m);
 
 % Setzt Standort aller Agents auf der Startpunkt (base) 
-for i = 1:m
-    pos(1:2,i) = base;
+for Index = 1:m
+    pos(1:2,Index) = base;
 end
 
 % Standart-Drehwinkel-Faktor
 turn = 0.25; 
+
+% Drehwahrscheinlichkeit
+turn_odd = 0.2;
 
 
 %Simulationsphase
@@ -41,7 +45,7 @@ while 1
     Pheromon1;
     
     
-    for i = 1:m
+    for Index = 1:m
         AntWalk;
     end
     
