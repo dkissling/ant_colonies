@@ -12,7 +12,8 @@ dir = [y;x];
 
 %Wert des bisherigen Vektors: momentum
 %Bisheriger Vektor
-vector = momentum*dir;
+%vector = momentum*dir;
+vector = [0;0];
 
 %Pheromonwirkung nach unten rechts
 vector = vector + Field_1(pos(1)-1,pos(2)-1)*[1;1]/sqrt(2); 
@@ -36,7 +37,10 @@ vector = vector + Field_1(pos(1)-1,pos(2))*[1;0];
 
 if norm(vector) ~= 0
     dir = vector/norm(vector);
-    p = atan(-dir(1)/dir(2))/pi;
+         
+    p = -atan(dir(1)/dir(2))/pi - (sign(dir(2))-1)/2;
+    
+    
 else
     %dir bleibt gleich
     %p bleibt gleich
