@@ -4,30 +4,47 @@
 %vertikal von oben nach unten.
 
 %Initialisierungsphase
-n = 100; %Grösse des Pheromongitters
-m = 1; %Anzahl Ant-Agents
 
-Feld1 = zeros(n); % Pheromongitter 1
+%Grösse des Pheromongitters
+n = 100;
+
+%Anzahl Ant-Agents
+m = 1;
+
+% Pheromongitter 1
+Field_1 = zeros(n);
+
 % optional mehrere Pheromongitter
 
-base = floor([n/2;n/2]); %Startort aller Agents (kann noch variiert werden)
-pos = zeros(3,m);     % pos(y-Koordinate,x-Koordinate,Index)
+
+%Startort aller Agents. (kann noch variiert werden)
+base = floor([n/2;n/2]);
+
+% Position der Ant-Agents
+% pos(y-Koordinate,x-Koordinate,Index)
+pos = zeros(3,m);
+
+% Setzt Standort aller Agents auf der Startpunkt (base) 
 for i = 1:m
     pos(1:2,i) = base;
 end
 
-turn = 0.25; %Gibt den Standart-Drehwinkel an
-phi = 0; %Starwinkel
+% Standart-Drehwinkel-Faktor
+turn = 0.25; 
 
 
 %Simulationsphase
-
-while 1  %Laufzeitbegrenzung kann angepasst werden
+%Laufzeitbegrenzung kann angepasst werden
+while 1 
+    
+    % Update Pheromon
     Pheromon1;
+    
     
     for i = 1:m
         AntWalk;
     end
+    
     
     FeldPlot;
     pause(0.01);
