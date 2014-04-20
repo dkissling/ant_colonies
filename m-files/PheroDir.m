@@ -4,6 +4,11 @@
 %Gesammtvektor aus allen umliegenden Pheromon-Feldern
 %Wert des bisherigen Vektors: 30
 
+% Set Direction vector (dir)
+x = cos(p * pi);
+y = -sin(p * pi);
+dir = [y;x];
+
 %Bisheriger Vektor
 vector = 30*dir;
 
@@ -29,6 +34,10 @@ vector = vector + Field_1(pos(1)-1,pos(2))*[1;0];
 
 if norm(vector) ~= 0
     dir = vector/norm(vector);
+    p = atan(-dir(1)/dir(2));
 else
     %dir bleibt gleich
+    %p bleibt gleich
 end
+
+dir = round(dir);
