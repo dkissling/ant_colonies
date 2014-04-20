@@ -34,7 +34,7 @@ vector = vector + Field_1(pos(1)-1,pos(2))*[1;0];
 
 if norm(vector) ~= 0
     dir = vector/norm(vector);
-    p = atan(-dir(1)/dir(2))/Pi;
+    p = atan(-dir(1)/dir(2))/pi;
 else
     %dir bleibt gleich
     %p bleibt gleich
