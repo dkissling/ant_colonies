@@ -13,8 +13,22 @@ Dies gliedert sich in zwei Teilaufgaben:
 * Weg zurück zur Basis finden
 
 **Matrix:** 100x100  
-**Pheromon:** Pheromone "färben" mit der Hälfte ihres Wertes auf die umliegenden Felder ab. Weiter reduziert sich ihr Wert pro Zeiteinheit.
-**Ameise:** Ameise kann in vier Richtungen laufen.
+**Pheromon:** Pheromone "färben" mit der Hälfte ihres Wertes auf die umliegenden Felder ab. Weiter reduziert sich ihr Wert pro Zeiteinheit.  
+**Ameise:** Ameise kann in vier Richtungen laufen. 
+
+## Die Ameise
+
+### Random Ant
+
+Diese Ameise mach zufällig einen Richtungswechsel in eine der vier 
+Hauptrichtungen. Jede Richtung ist gleich wahrscheinlich.
+
+### Vector Ant
+
+Die Ameise hat einen Richtungsvektor. Dieser ändert sich nur mit einer 
+bestimmten Wahrscheinlichkeit. D.h. die Ameise ändert ihre Richtung z.B. nur 
+alle 40%. Ändert sie diese, so um einen bestimmten Winkel (Phi). Durch die 
+Variation dieses Winkels ist die Ameise nicht nur in vier Richtungen begrenzt.
 
 ## Weiterführung
 
