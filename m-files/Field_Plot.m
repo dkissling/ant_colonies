@@ -7,7 +7,7 @@
 %MAP (1:n,3) = 1 - (1:n)/n;
 
 
-image(Feld1);
+image(Field_1);
 colormap(jet);
 hold on
 for i = 1:m

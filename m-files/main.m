@@ -50,6 +50,6 @@ while 1
     end
     
     
-    FeldPlot;
+    Field_Plot;
     pause(0.01);
 end

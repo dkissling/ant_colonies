@@ -16,16 +16,11 @@ else
     %straight
 end
 
-% fi = mod(fi,2);
+% phi = mod(fi,2);
 
-% Set Direction vector (dir)
-x = round(cos(p * pi));
-y = round(-sin(p * pi));
-dir = [y;x];
-
-
-% 
+% Definiert dir und ändert p (phi)
 PheroDir;
+
 
 % Index not out of bounds
 if max(point + dir) < n && min(point + dir) > 1
