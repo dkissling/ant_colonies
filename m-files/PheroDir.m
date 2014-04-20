@@ -2,15 +2,17 @@
 
 
 %Gesammtvektor aus allen umliegenden Pheromon-Feldern
-%Wert des bisherigen Vektors: 30
+
 
 % Set Direction vector (dir)
 x = cos(p * pi);
 y = -sin(p * pi);
 dir = [y;x];
 
+
+%Wert des bisherigen Vektors: momentum
 %Bisheriger Vektor
-vector = 30*dir;
+vector = momentum*dir;
 
 %Pheromonwirkung nach unten rechts
 vector = vector + Field_1(pos(1)-1,pos(2)-1)*[1;1]/sqrt(2); 

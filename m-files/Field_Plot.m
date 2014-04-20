@@ -11,7 +11,7 @@ image(Field_1);
 colormap(jet);
 hold on
 for i = 1:m
-	plot(pos(1,i),pos(2,i),'kx');
+	plot(pos(2,i),pos(1,i),'kx');
     hold on
 end
 hold off

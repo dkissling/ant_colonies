@@ -19,24 +19,28 @@ end
 % phi = mod(fi,2);
 
 % Definiert dir und ändert p (phi)
-%PheroDir;
+PheroDir;
 
 direction = round([-sin(p * pi); cos(p * pi)]);
+
+Field_1(point(1),point(2)) = 50;
 
 % Index not out of bounds
 if max(point + direction) < n && min(point + direction) > 1
     
     % Zuweisen der Koordinaten und des Winkels Phi
     pos(1:2,Index) = point + direction;
-    phi(Index) = p;
+    
     
     %Field(point(1),point(2)) = Field(point(1),point(2)) + 2;
 else
     
     % other direction
-    p = p + 1;
+    p = mod(p + 1,2);
     
 end
+
+phi(Index) = p;
 
 
 

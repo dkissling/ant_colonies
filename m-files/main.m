@@ -5,11 +5,12 @@
 
 %Initialisierungsphase
 
+
 %Grösse des Pheromongitters
-n = 100;
+n = 200;
 
 %Anzahl Ant-Agents
-m = 3;
+m = 11;
 
 % Pheromongitter 1
 Field_1 = zeros(n);
@@ -31,10 +32,12 @@ for Index = 1:m
 end
 
 % Standart-Drehwinkel-Faktor
-turn = 1/4; 
+turn = 1/8; 
 
 % Drehwahrscheinlichkeit
-turn_odd = 0.2;
+turn_odd = 0.1;
+
+momentum = 0;
 
 
 %Simulationsphase
@@ -51,5 +54,5 @@ while 1
     
     
     Field_Plot;
-    pause(0.1);
+    pause(0.001);
 end
