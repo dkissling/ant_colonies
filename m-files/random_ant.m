@@ -14,6 +14,7 @@ while j < 40
     i = 0;
     
     while i < 6000
+        
         dir = floor(4*rand(1));
 
         if dir == 0
@@ -27,11 +28,6 @@ while j < 40
         end
 
         Field(x,y) = Field(x,y) + 2;
-
-    %     MAP = zeros (100,3);
-    %     MAP (1:100,1) =  1;
-    %     MAP (1:100,2) = 1 - (1:n)/n;
-    %     MAP (1:100,3) = 1 - (1:n)/n;
 
 
        % pause(0.0001);
