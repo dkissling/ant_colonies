@@ -5,14 +5,14 @@ Field = zeros(n,n);
 
 
 
-while j < 40
+while j < 1
 
     
     point = [n/2;n/2];
     dir = [0;1];
     
-    turn = 1/2;
-    fi = 0;
+    turn = 1/4;
+    phi = 0;
     
     i = 0;
     
@@ -23,30 +23,34 @@ while j < 40
         % fi durch Pheromon bestimmen
         
         if odd < 0.2
-            fi = fi + turn;
+            phi = phi + turn;
         elseif odd < 0.4
-            fi = fi - turn;
+            phi = phi - turn;
         else
             %straight
         end 
         
         % fi = mod(fi,2);
         
-        x = round(sin(fi * pi));
-        y = round(cos(fi * pi));
+        % Set Direction vector
+        x = round(sin(phi * pi));
+        y = round(cos(phi * pi));
         dir = [x;y];
         
         
+        % Index not out of bounds
         if max(point + dir) < n && min(point + dir) > 1
             point = point + dir;
             Field(point(1),point(2)) = Field(point(1),point(2)) + 2;
         else
+            
+            % other direction
             fi = fi + 1;
             
         end
        
         
-        %pause(0.00001);
+        % pause(0.0001);
 
         i = i + 1;
         
@@ -60,3 +64,4 @@ end
 
 image(Field);
 colormap(jet);
+
