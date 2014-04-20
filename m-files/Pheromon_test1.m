@@ -1,5 +1,5 @@
 % Zellulärer Automat zur Simulation der Umgebungsvariablen (hauptsächlich
-% Pheromone.
+% Pheromone).
 % Testversion 1
 
 n = 100;
@@ -24,4 +24,10 @@ while 1
     Feld = max(Feld,feldd(2:n+1,2:n+1));
     Feld = max(Feld,feldl(2:n+1,2:n+1));
     
+    Feld(1,1:n) = -1;
+    Feld(n,1:n) = -1;
+    Feld(2:n-1,1) = -1;
+    Feld(2:n-1,n) = -1;
+    Feld_Plot;
+    pause(0.1);
 end
