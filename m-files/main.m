@@ -9,7 +9,7 @@
 n = 100;
 
 %Anzahl Ant-Agents
-m = 1;
+m = 3;
 
 % Pheromongitter 1
 Field_1 = zeros(n);
@@ -31,7 +31,7 @@ for Index = 1:m
 end
 
 % Standart-Drehwinkel-Faktor
-turn = 0.25; 
+turn = 1/4; 
 
 % Drehwahrscheinlichkeit
 turn_odd = 0.2;
@@ -51,5 +51,5 @@ while 1
     
     
     Field_Plot;
-    pause(0.01);
+    pause(0.1);
 end

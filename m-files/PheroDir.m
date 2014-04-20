@@ -40,4 +40,4 @@ else
     %p bleibt gleich
 end
 
-dir = round(dir);
+%dir = round(dir);

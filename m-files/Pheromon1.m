@@ -19,10 +19,10 @@ Field_1 = max(Field_1,Field_d(2:n+1,2:n+1));
 Field_1 = max(Field_1,Field_l(2:n+1,2:n+1));
 
 %Sicherheitsrand
-Field_1(1:n,2) = 100;
-Field_1(1:n,n-1) = 100;
-Field_1(2,2:n-1) = 100;
-Field_1(n-1,2:n-1) = 100;
+Field_1(1:n,2) = 0;
+Field_1(1:n,n-1) = 0;
+Field_1(2,2:n-1) = 0;
+Field_1(n-1,2:n-1) = 0;
 
 Field_1(1:n,1) = 100;
 Field_1(1:n,n) = 100;
