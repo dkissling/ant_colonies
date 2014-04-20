@@ -5,7 +5,7 @@ point = pos(1:2,Index);
 p = phi(Index);
 
 
-odd = rand(1);
+odd = 0.1; %rand(1);
 
 
 if odd < turn_odd
