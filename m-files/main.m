@@ -12,18 +12,25 @@ n = 100;
 %Anzahl Ant-Agents
 m = 3;
 
-% Pheromongitter 1
-Field_1 = zeros(n);
+% Pheromongitter
+Field_0 = zeros(n); %Nahrung und Base
+Field_1 = zeros(n); %Hindernisse und Feinde
+Field_2 = zeros(n); %Spur der Nahrungssuche
+
 % optional mehrere Pheromongitter
 
 
 %Startort aller Agents. (kann noch variiert werden)
 base = floor([n/2;n/2]);
 
-% Position der Ant-Agents
+%Position der Nahrung (randomisiert)
+food = rand(2,1);
+
+% Werte der Ant-Agents
 % pos(y-Koordinate,x-Koordinate)
 pos = zeros(2,m);
 phi = 2*rand(1,m);
+carries_food = zeros(1,m);
 
 % Setzt Standort aller Agents auf der Startpunkt (base) 
 for Index = 1:m
@@ -49,7 +56,12 @@ while 1
     %Pheromon1; %Wird im Moment nicht benötigt
        
     for Index = 1:m
-        AntWalk;
+        if carries_food(Index) == 0
+            %Sucht nach Nahrung
+             AntWalk;
+        else
+            %Kehrt zur Base zurück
+        end
     end
     
     

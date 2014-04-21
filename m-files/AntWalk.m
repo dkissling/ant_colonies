@@ -38,7 +38,11 @@ else
         
 end
 
-phi(Index) = p;
-
+if Field_0(pos(1,Index),pos(2,Index)) == 2
+    carries_food(Index) = 1;
+    phi(Index) = mod(p + 1,2);
+else
+    phi(Index) = p;
+end
 
 
