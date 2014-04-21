@@ -7,10 +7,10 @@
 
 
 %Grösse des Pheromongitters
-n = 200;
+n = 100;
 
 %Anzahl Ant-Agents
-m = 11;
+m = 3;
 
 % Pheromongitter 1
 Field_1 = zeros(n);
@@ -32,12 +32,14 @@ for Index = 1:m
 end
 
 % Standart-Drehwinkel-Faktor
-turn = 1/8; 
+turn = 1/5; 
 
 % Drehwahrscheinlichkeit
-turn_odd = 0.1;
+turn_odd = 0.2;
 
-momentum = 0;
+momentum = 10;
+
+PheromonFix;
 
 
 %Simulationsphase
@@ -45,14 +47,13 @@ momentum = 0;
 while 1 
     
     % Update Pheromon
-    Pheromon1;
-    
-    
+    %Pheromon1; %Wird im Moment nicht benötigt
+       
     for Index = 1:m
         AntWalk;
     end
     
     
     Field_Plot;
-    pause(0.001);
+    pause(0.1);
 end

@@ -2,48 +2,30 @@
 
 
 %Gesammtvektor aus allen umliegenden Pheromon-Feldern
-
-
-% Set Direction vector (dir)
-x = cos(p * pi);
-y = -sin(p * pi);
-dir = [y;x];
+%Wird zu p umgerechnet
 
 
 %Wert des bisherigen Vektors: momentum
 %Bisheriger Vektor
-%vector = momentum*dir;
-vector = [0;0];
+vector = momentum*[-sin(p * pi);cos(p * pi)];
 
-%Pheromonwirkung nach unten rechts
-vector = vector + Field_1(pos(1)-1,pos(2)-1)*[1;1]/sqrt(2); 
-%Pheromonwirkung nach rechts
-vector = vector + Field_1(pos(1),pos(2)-1)*[0;1]; 
-%Pheromonwirkung nach oben rechts
-vector = vector + Field_1(pos(1)-1,pos(2)-1)*[-1;1]/sqrt(2); 
-%Pheromonwirkung nach oben
-vector = vector + Field_1(pos(1)+1,pos(2))*[-1;0]; 
-%Pheromonwirkung nach oben links
-vector = vector + Field_1(pos(1)+1,pos(2)+1)*[-1;-1]/sqrt(2);  
-%Pheromonwirkung nach links
-vector = vector + Field_1(pos(1),pos(2)+1)*[0;-1]; 
-%Pheromonwirkung nach unten links
-vector = vector + Field_1(pos(1)-1,pos(2)+1)*[1;-1]/sqrt(2); 
-%Pheromonwirkung nach unten
-vector = vector + Field_1(pos(1)-1,pos(2))*[1;0];
+for i = -1:1
+    for j = -1:1
+        if i ~= 0 || j ~=0
+         vector = vector + Field_1(point(1)+i,point(2)+j)*[-i;-j]/norm([i;j]);
+        end
+    end
+end
 
-
-%Vektor normieren
+%Ausgabe des Winkelfaktors p (phi)
 
 if norm(vector) ~= 0
-    dir = vector/norm(vector);
-         
-    p = -atan(dir(1)/dir(2))/pi - (sign(dir(2))-1)/2;
+    vector = vector/norm(vector);        
+    p = atan2(-vector(1),vector(2))/pi;
+    p = mod(p,2);
     
-    
+        
 else
-    %dir bleibt gleich
     %p bleibt gleich
 end
 
-%dir = round(dir);
