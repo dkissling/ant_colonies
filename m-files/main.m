@@ -10,15 +10,10 @@
 n = 100;
 
 %Anzahl Ant-Agents
-<<<<<<< HEAD
 m = 3;
-=======
-m = 2;
->>>>>>> 86813f25c5111f7ca5413e14e75c6b6b7633450a
 
 % Pheromongitter 1
 Field_1 = zeros(n);
-
 % optional mehrere Pheromongitter
 
 
@@ -39,11 +34,7 @@ end
 turn = 1/5; 
 
 % Drehwahrscheinlichkeit
-<<<<<<< HEAD
 turn_odd = 0.2;
-=======
-turn_odd = 0;
->>>>>>> 86813f25c5111f7ca5413e14e75c6b6b7633450a
 
 momentum = 10;
 

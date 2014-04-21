@@ -5,7 +5,7 @@ point = pos(1:2,Index);
 p = phi(Index);
 
 
-odd = 0.1; %rand(1);
+odd = rand(1);
 
 
 if odd < turn_odd
@@ -15,8 +15,6 @@ elseif odd < 2*turn_odd
 else
     %straight
 end
-
-% phi = mod(fi,2);
 
 % Ändert p (phi) falls nötig
 PheroDir;
@@ -37,8 +35,7 @@ if max(point + direction) < n && min(point + direction) > 1
 else
     
     % other direction
-    %p = p + 1/2;
-    
+        
 end
 
 phi(Index) = p;
