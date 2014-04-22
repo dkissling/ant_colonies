@@ -10,7 +10,7 @@
 n = 100;
 
 %Anzahl Ant-Agents
-m = 3;
+m = 10;
 
 % Pheromongitter
 Field_0 = zeros(n); %Nahrung und Base (Umgebende Pheromone)
@@ -24,7 +24,10 @@ Field_2 = zeros(n); %Spur der Nahrungssuche
 base = floor([n/2;n/2]);
 
 %Position der Nahrung (randomisiert)
-food = 2+round((n-4)*rand(2,1));
+food = 4+round((n-8)*rand(2,1));
+
+%Anzahl Nahrungseinheiten, die zurück zur Base gebracht wurden
+food_counter = 0;
 
 % Werte der Ant-Agents
 % pos(y-Koordinate,x-Koordinate)
@@ -38,7 +41,7 @@ for Index = 1:m
 end
 
 % Standart-Drehwinkel-Faktor
-turn = 1/8; 
+turn = 1/4; 
 
 % Drehwahrscheinlichkeit
 turn_odd = 0.1;
@@ -61,6 +64,7 @@ while 1
              AntWalk;
         else
             %Kehrt zur Base zurück
+            BringBack;
         end
     end
     

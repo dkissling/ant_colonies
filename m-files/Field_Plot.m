@@ -30,17 +30,17 @@ colormap(jet);
 %hold off
 
 %Plot Field_1:
-subplot(1,2,1);
-image(Field_1);
-hold on
-for i = 1:m
-	plot(pos(2,i),pos(1,i),'kx');
-    hold on
-end
-hold off
+%subplot(1,2,1);
+%image(Field_1);
+%hold on
+%for i = 1:m
+%	plot(pos(2,i),pos(1,i),'kx');
+%    hold on
+%end
+%hold off
 
 %Plot Field_2: (plus base and Food)
-subplot(1,2,2);
+subplot(1,1,1);
 image(Field_2);
 hold on
 for i = 1:m

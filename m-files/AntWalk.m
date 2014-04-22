@@ -1,4 +1,4 @@
-% Ant-agent
+% Ant-agent for searching food
 
 
 point = pos(1:2,Index);
@@ -22,7 +22,7 @@ PheroDir;
 direction = round([-sin(p * pi); cos(p * pi)]);
 
 %Pheromonspur (während Suchvorgang):
-Field_2(point(1),point(2)) = Field_2(point(1),point(2))+10;
+Field_2(point(1),point(2)) = Field_2(point(1),point(2))+1;
 
 
 
@@ -33,7 +33,7 @@ if max(point + direction) < n && min(point + direction) > 1
     pos(1:2,Index) = point + direction;
     
     
-    %Field(point(1),point(2)) = Field(point(1),point(2)) + 2;
+    %Field_1(point(1),point(2)) = Field_1(point(1),point(2)) + 2;
 else
     
     % other direction
