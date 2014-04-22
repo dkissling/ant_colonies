@@ -28,11 +28,6 @@ direction = round([-sin(p * pi); cos(p * pi)]);
 Field_2(point(1),point(2)) = Field_2(point(1),point(2))+1;
 
 
-Field_2(point(1),point(2)) = Field_2(point(1),point(2))+10;
-%Test
-%Field_1(point(1),point(2)) = 10;
-
-
 
 % Index not out of bounds
 if max(point + direction) < n && min(point + direction) > 1
