@@ -4,15 +4,33 @@
 point = pos(1:2,Index);
 p = phi(Index);
 
-dir = point+2*round([-sin(p * pi); cos(p * pi)]);
+dir = point+round([-sin(p * pi); cos(p * pi)]);
 if max(dir) < n && min(dir) > 1
     %suche nach dem höchsten Pheromonwert (auf Field_2) in Bewegungsrichtung    
-    DirField = Field_2((dir(1)-1):(dir(1)+1),(dir(2)-1):(dir(2)+1));
+    if dir(1) == point(1) %nach rechts oder links
+        DirField = Field_2(dir(1),(dir(2)-1):(dir(2)+1));
+        
+        [row_val,row_ind] = max(DirField);        
+        dir = (dir+[row_ind-2;0])-point;
+        
+    elseif dir(2) == point(2) %nach oben oder unten
+        DirField = Field_2((dir(1)-1):(dir(1)+1),dir(2));
+        
+        [row_val,row_ind] = max(DirField);        
+        dir = (dir+[0;row_ind-2])-point;
+        
+    else %nach oben rechts, oben links, unten rechts und unten links        
+        DirField = Field_2((dir(1)-1):(dir(1)+1),(dir(2)-1):(dir(2)+1));
+        
+        [row_val,row_ind] = max(DirField);
+        [col_val,col_ind] = max(row_ind);
+        
+        dir = [row_ind(col_ind);col_ind]-([2;2]-(dir-point));
+        
+        
+    end
     
-    [row_val,row_ind] = max(DirField);
-    [col_val,col_ind] = max(row_ind);
-    
-    dir = [row_ind(col_ind);col_ind]-([2;2]-(dir-point));
+    %Verhindert Null-Vektoren
     if norm(dir) ~= 0
         
         dir = dir/norm(dir);        
@@ -23,7 +41,7 @@ if max(dir) < n && min(dir) > 1
     end
     
 else
-    PheroDir;
+    %PheroDir;
 end
 
 
@@ -64,6 +82,8 @@ else
     p = mod(1 - p,2);
 end
 
+Field_2(point(1),point(2)) = Field_2(point(1),point(2))+pheromon_strength(Index);
+
 %Rückkehr zur Base
 if Field_0(pos(1,Index),pos(2,Index)) == 1
     %Die Ameise kehrt in den Suchmodus zurück
@@ -72,6 +92,10 @@ if Field_0(pos(1,Index),pos(2,Index)) == 1
     food_counter = food_counter + 1; 
     %Die Ameise wendet
     phi(Index) = mod(p + 1,2);
+    
+    pheromon_strength(Index) = pheromon_maximum;
 else
     phi(Index) = p;
+    
+    pheromon_strength(Index) = max(pheromon_strength(Index) - 0.02*pheromon_maximum,0);
 end

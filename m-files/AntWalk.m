@@ -18,32 +18,28 @@ end
 
 
 % Ändert p (phi) falls nötig
-PheroDir;
+%PheroDir;
 
 % Definiert direction und ändert p (phi)
 direction = round([-sin(p * pi); cos(p * pi)]);
 
-%Pheromonspur (während Suchvorgang):
 
+%Pheromonspur (während Suchvorgang):
 Field_2(point(1),point(2)) = Field_2(point(1),point(2))+pheromon_strength(Index);
 
 
 
 % Index not out of bounds
 if max(point + direction) < n && min(point + direction) > 1
-    
-    % Zuweisen der Koordinaten und des Winkels Phi
+ 
     pos(1:2,Index) = point + direction;
     
-    
-       
-    
-    % X-Achsen-Spiegelung
+% X-Achsen-Spiegelung
 elseif point(2) + direction(2) < n && point(2) + direction(2) > 1
     
     p = mod(2 - p,2);
     
-    % Y-Achsen-Spiegelung
+% Y-Achsen-Spiegelung
 else
     
     p = mod(1 - p,2);
@@ -59,7 +55,8 @@ if Field_0(pos(1,Index),pos(2,Index)) == 2
     %Die Ameise wendet
     phi(Index) = mod(p + 1,2);
     
-    % Hat keine Nahrung gefunden
+    
+% Hat keine Nahrung gefunden
 else
     %Die Pheromonstärke nimmt ab
     pheromon_strength(Index) = max(pheromon_strength(Index) - 0.02*pheromon_maximum,0);
