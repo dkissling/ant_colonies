@@ -16,14 +16,22 @@ else
     %straight
 end
 
+
 % Ändert p (phi) falls nötig
 PheroDir;
 
+% Definiert direction und ändert p (phi)
 direction = round([-sin(p * pi); cos(p * pi)]);
 
 %Pheromonspur (während Suchvorgang):
+<<<<<<< HEAD
 Field_2(point(1),point(2)) = Field_2(point(1),point(2))+1;
 
+=======
+Field_2(point(1),point(2)) = Field_2(point(1),point(2))+10;
+%Test
+%Field_1(point(1),point(2)) = 10;
+>>>>>>> 899dfe07811774ffc5659a0c84000cb32cec8f57
 
 
 % Index not out of bounds
@@ -33,12 +41,23 @@ if max(point + direction) < n && min(point + direction) > 1
     pos(1:2,Index) = point + direction;
     
     
+<<<<<<< HEAD
     %Field_1(point(1),point(2)) = Field_1(point(1),point(2)) + 2;
+=======
+    %Field(point(1),point(2)) = Field(point(1),point(2)) + 2;
+ 
+% X-Achsen-Spiegelung 
+elseif point(2) + direction(2) < n && point(2) + direction(2) > 1
+    
+    p = mod(2 - p,2);
+    
+% Y-Achsen-Spiegelung    
+>>>>>>> 899dfe07811774ffc5659a0c84000cb32cec8f57
 else
     
-    % other direction
-        
+    p = mod(1 - p,2);
 end
+
 
 if Field_0(pos(1,Index),pos(2,Index)) == 2
     carries_food(Index) = 1;
