@@ -44,12 +44,18 @@ subplot(1,1,1);
 image(Field_2);
 hold on
 for i = 1:m
-	plot(pos(2,i),pos(1,i),'kx');
-    hold on
+    if carries_food(i) == 0
+        plot(pos(2,i),pos(1,i),'kx');
+        hold on
+    else
+        plot(pos(2,i),pos(1,i),'ro');
+        hold on
+    end
 end
 plot(base(2),base(1),'gd');
 hold on
 plot(food(2),food(1),'ys');
 hold off
 text(1,-4,['Food-counter=',num2str(food_counter)]);
+text(50,-4,['Total of carriing Ants=',num2str(sum(carries_food))]);
 

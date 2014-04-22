@@ -4,7 +4,7 @@
 point = pos(1:2,Index);
 p = phi(Index);
 
-dir = round(point+[-sin(p * pi); cos(p * pi)]);
+dir = point+2*round([-sin(p * pi); cos(p * pi)]);
 if max(dir) < n && min(dir) > 1
     %suche nach dem höchsten Pheromonwert (auf Field_2) in Bewegungsrichtung    
     DirField = Field_2((dir(1)-1):(dir(1)+1),(dir(2)-1):(dir(2)+1));
@@ -23,12 +23,13 @@ if max(dir) < n && min(dir) > 1
     end
     
 else
-    %PheroDir;
+    PheroDir;
 end
 
 
 %Mögliche Drehung
-odd = rand(1);
+odd = 1;
+
 
 if odd < turn_odd
     p = p + turn;
@@ -70,7 +71,7 @@ if Field_0(pos(1,Index),pos(2,Index)) == 1
     %Dieser Wert kann je nach Nahrungsquelle angepasst werden.
     food_counter = food_counter + 1; 
     %Die Ameise wendet
-    phi(Index) = mod(p + 0.8,2);
+    phi(Index) = mod(p + 1,2);
 else
     phi(Index) = p;
 end
