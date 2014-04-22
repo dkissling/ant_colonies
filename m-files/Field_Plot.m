@@ -51,4 +51,5 @@ plot(base(2),base(1),'gd');
 hold on
 plot(food(2),food(1),'ys');
 hold off
+text(1,-4,['Food-counter=',num2str(food_counter)]);
 
