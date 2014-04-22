@@ -4,46 +4,7 @@
 point = pos(1:2,Index);
 p = phi(Index);
 
-dir = point+round([-sin(p * pi); cos(p * pi)]);
-if max(dir) < n && min(dir) > 1
-    %suche nach dem höchsten Pheromonwert (auf Field_2) in Bewegungsrichtung    
-    if dir(1) == point(1) %nach rechts oder links
-        DirField = Field_2(dir(1),(dir(2)-1):(dir(2)+1));
-        
-        [row_val,row_ind] = max(DirField);        
-        dir = (dir+[row_ind-2;0])-point;
-        
-    elseif dir(2) == point(2) %nach oben oder unten
-        DirField = Field_2((dir(1)-1):(dir(1)+1),dir(2));
-        
-        [row_val,row_ind] = max(DirField);        
-        dir = (dir+[0;row_ind-2])-point;
-        
-    else %nach oben rechts, oben links, unten rechts und unten links        
-        DirField = Field_2((dir(1)-1):(dir(1)+1),(dir(2)-1):(dir(2)+1));
-        
-        [row_val,row_ind] = max(DirField);
-        [col_val,col_ind] = max(row_ind);
-        
-        dir = [row_ind(col_ind);col_ind]-([2;2]-(dir-point));
-        
-        
-    end
-    
-    %Verhindert Null-Vektoren
-    if norm(dir) ~= 0
-        
-        dir = dir/norm(dir);        
-        p = atan2(-dir(1),dir(2))/pi;
-        p = mod(p,2);
-    else
-        % p (phi) bleibt gleich
-    end
-    
-else
-    %PheroDir;
-end
-
+FollowTrail;
 
 %Mögliche Drehung
 odd = 1;
