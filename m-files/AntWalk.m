@@ -25,7 +25,7 @@ direction = round([-sin(p * pi); cos(p * pi)]);
 
 %Pheromonspur (während Suchvorgang):
 
-Field_2(point(1),point(2)) = Field_2(point(1),point(2))+round(10*pheromon_strength(Index))/10;
+Field_2(point(1),point(2)) = Field_2(point(1),point(2))+pheromon_strength(Index);
 
 
 
@@ -62,7 +62,7 @@ if Field_0(pos(1,Index),pos(2,Index)) == 2
     % Hat keine Nahrung gefunden
 else
     %Die Pheromonstärke nimmt ab
-    pheromon_strength(Index) = max(pheromon_strength(Index) - 0.01*pheromon_maximum,0);
+    pheromon_strength(Index) = max(pheromon_strength(Index) - 0.02*pheromon_maximum,0);
     %Der Ameisenwinkel phi wird auf den neusten stand gebracht
     phi(Index) = p;
 end

@@ -39,7 +39,7 @@ carries_food = zeros(1,m);
 % nehmen mit der Zeit ab.
 
 % Maximal gestreute Pheromon-stärke
-pheromon_maximum = 1;
+pheromon_maximum = 5;
 % Pheromonstärke individuell pro Ant-agent
 pheromon_strength = pheromon_maximum*ones(1,m);
 
@@ -63,8 +63,8 @@ PheromonFix;
 %Laufzeitbegrenzung kann angepasst werden
 while 1 
     
-    % Update Pheromon
-    %Pheromon1; %Wird im Moment nicht benötigt
+    % Regelt Pheromonabnahme
+    Pheromon1; 
        
     for Index = 1:m
         if carries_food(Index) == 0
@@ -72,11 +72,11 @@ while 1
              AntWalk;
         else
             %Kehrt zur Base zurück
-            BringBack;
+            BringBack2;
         end
     end
     
     
     Field_Plot;
-    pause(0.01);
+    pause(0.05);
 end
