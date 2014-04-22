@@ -4,10 +4,10 @@
 point = pos(1:2,Index);
 p = phi(Index);
 
-FollowTrail;
+FollowTrail2;
 
 %Mögliche Drehung
-odd = 1;
+odd = rand(1);
 
 
 if odd < turn_odd

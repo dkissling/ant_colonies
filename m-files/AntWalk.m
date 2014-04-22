@@ -4,6 +4,7 @@
 point = pos(1:2,Index);
 p = phi(Index);
 
+FollowTrail2;
 
 odd = rand(1);
 
@@ -49,7 +50,7 @@ end
 % Findet Nahrung
 if Field_0(pos(1,Index),pos(2,Index)) == 2
     %Die Pheromonstärke wird zurückgesetzt
-    pheromon_strength(Index) = pheromon_maximum;
+    pheromon_strength(Index) = 2*pheromon_maximum;
     %Die Ameise trägt nun Nahrung
     carries_food(Index) = 1;
     %Die Ameise wendet

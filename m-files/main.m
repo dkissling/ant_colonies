@@ -10,7 +10,7 @@
 n = 100;
 
 %Anzahl Ant-Agents
-m = 10;
+m = 20;
 
 % Pheromongitter
 Field_0 = zeros(n); %Nahrung und Base (Umgebende Pheromone)
@@ -52,7 +52,7 @@ end
 turn = 1/10; 
 
 % Drehwahrscheinlichkeit
-turn_odd = 0.1;
+turn_odd = 0.05;
 
 momentum = 10;
 
@@ -72,7 +72,7 @@ while 1
              AntWalk;
         else
             %Kehrt zur Base zurück
-            BringBack2;
+            BringBack;
         end
     end
     

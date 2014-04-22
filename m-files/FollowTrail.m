@@ -1,5 +1,6 @@
 %Folgt einer Spur auf Field_2
-
+% Gibt p zurück
+%Maximalfeld-Prinzip
 
 dir = point+round([-sin(p * pi); cos(p * pi)]);
 if max(dir) < n && min(dir) > 1
@@ -25,15 +26,27 @@ if max(dir) < n && min(dir) > 1
         end
         
     else %nach oben rechts, oben links, unten rechts und unten links
-        DirField = Field_2((dir(1)-1):(dir(1)+1),(dir(2)-1):(dir(2)+1));
+        rel = dir - point;
+        DirField = [Field_2(point(1),point(2)+rel(2));0;0];
+        
+        DirField(2)= Field_2(point(1)+rel(1),point(2)+rel(2));
+        
+        DirField(3)= Field_2(point(1)+rel(1),point(2));
         
         [row_val,row_ind] = max(DirField);
-        [col_val,col_ind] = max(row_ind);
+        
+        rel = dir - point;
         
         if row_val > 0
-            dir = [row_ind(col_ind);col_ind]-([2;2]-(dir-point));
+            if row_ind == 1 %nach rechts oder links
+                rel(1)=0;
+                dir = rel;
+            elseif row_ind == 3 %nach oben oder unten
+                rel(2)=0;
+                dir = rel; %diagonal weiter
+            end
         else
-            dir = dir - point;
+            dir = rel;
         end
         
     end
@@ -52,3 +65,4 @@ else
     %PheroDir;
 end
 
+clearvars rel dir row_val row_ind DirField
