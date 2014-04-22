@@ -21,8 +21,10 @@ PheroDir;
 
 direction = round([-sin(p * pi); cos(p * pi)]);
 
-%Pheromonspur deaktiviert:
-%Field_1(point(1),point(2)) = 50;
+%Pheromonspur (während Suchvorgang):
+Field_2(point(1),point(2)) = Field_2(point(1),point(2))+10;
+
+
 
 % Index not out of bounds
 if max(point + direction) < n && min(point + direction) > 1

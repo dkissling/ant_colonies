@@ -13,7 +13,7 @@ n = 100;
 m = 3;
 
 % Pheromongitter
-Field_0 = zeros(n); %Nahrung und Base
+Field_0 = zeros(n); %Nahrung und Base (Umgebende Pheromone)
 Field_1 = zeros(n); %Hindernisse und Feinde
 Field_2 = zeros(n); %Spur der Nahrungssuche
 
@@ -24,7 +24,7 @@ Field_2 = zeros(n); %Spur der Nahrungssuche
 base = floor([n/2;n/2]);
 
 %Position der Nahrung (randomisiert)
-food = rand(2,1);
+food = 2+round((n-4)*rand(2,1));
 
 % Werte der Ant-Agents
 % pos(y-Koordinate,x-Koordinate)
@@ -38,10 +38,10 @@ for Index = 1:m
 end
 
 % Standart-Drehwinkel-Faktor
-turn = 1/5; 
+turn = 1/8; 
 
 % Drehwahrscheinlichkeit
-turn_odd = 0.2;
+turn_odd = 0.1;
 
 momentum = 10;
 
@@ -66,5 +66,5 @@ while 1
     
     
     Field_Plot;
-    pause(0.1);
+    pause(0.01);
 end
