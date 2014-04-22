@@ -5,7 +5,7 @@ point = pos(1:2,Index);
 p = phi(Index);
 
 
-odd = 0.1; %rand(1);
+odd = rand(1);
 
 
 if odd < turn_odd
@@ -19,11 +19,12 @@ end
 % phi = mod(fi,2);
 
 % Definiert dir und ändert p (phi)
-PheroDir;
+% PheroDir;
 
 direction = round([-sin(p * pi); cos(p * pi)]);
 
-Field_1(point(1),point(2)) = 50;
+% Pheromon versteuen
+Field_1(point(1),point(2)) = 10;
 
 % Index not out of bounds
 if max(point + direction) < n && min(point + direction) > 1
@@ -33,11 +34,16 @@ if max(point + direction) < n && min(point + direction) > 1
     
     
     %Field(point(1),point(2)) = Field(point(1),point(2)) + 2;
+    
+% X-Achsen-Spiegelung 
+elseif point(2) + direction(2) < n && point(2) + direction(2) > 1
+    
+    p = mod(2 - p,2);
+    
+% Y-Achsen-Spiegelung    
 else
     
-    % other direction
-    p = mod(p + 1,2);
-    
+    p = mod(1 - p,2);
 end
 
 phi(Index) = p;
