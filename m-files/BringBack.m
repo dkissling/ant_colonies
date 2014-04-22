@@ -64,6 +64,8 @@ else
     p = mod(1 - p,2);
 end
 
+Field_2(point(1),point(2)) = Field_2(point(1),point(2))+pheromon_strength(Index);
+
 %Rückkehr zur Base
 if Field_0(pos(1,Index),pos(2,Index)) == 1
     %Die Ameise kehrt in den Suchmodus zurück
@@ -72,6 +74,10 @@ if Field_0(pos(1,Index),pos(2,Index)) == 1
     food_counter = food_counter + 1; 
     %Die Ameise wendet
     phi(Index) = mod(p + 1,2);
+    
+    pheromon_strength(Index) = pheromon_maximum;
 else
     phi(Index) = p;
+    
+    pheromon_strength(Index) = max(pheromon_strength(Index) - 0.02*pheromon_maximum,0);
 end
