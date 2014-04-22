@@ -23,7 +23,7 @@ if max(dir) < n && min(dir) > 1
     end
     
 else
-    PheroDir;
+    %PheroDir;
 end
 
 
@@ -51,11 +51,16 @@ if max(point + direction) < n && min(point + direction) > 1
     
     
     %Field_1(point(1),point(2)) = Field_1(point(1),point(2)) + 2;
+
+    % X-Achsen-Spiegelung
+elseif point(2) + direction(2) < n && point(2) + direction(2) > 1
+    
+    p = mod(2 - p,2);
+    
+    % Y-Achsen-Spiegelung
 else
     
-    % other direction
-    p = mod(p + 0.8,2);
-            
+    p = mod(1 - p,2);
 end
 
 %Rückkehr zur Base

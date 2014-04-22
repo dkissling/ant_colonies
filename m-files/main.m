@@ -35,13 +35,21 @@ pos = zeros(2,m);
 phi = 2*rand(1,m);
 carries_food = zeros(1,m);
 
+% Zu Beginn des Such-Zyklus sind die gestreuten Pheromone stärker und
+% nehmen mit der Zeit ab.
+
+% Maximal gestreute Pheromon-stärke
+pheromon_maximum = 1;
+% Pheromonstärke individuell pro Ant-agent
+pheromon_strength = pheromon_maximum*ones(1,m);
+
 % Setzt Standort aller Agents auf der Startpunkt (base) 
 for Index = 1:m
     pos(1:2,Index) = base;
 end
 
 % Standart-Drehwinkel-Faktor
-turn = 1/4; 
+turn = 1/10; 
 
 % Drehwahrscheinlichkeit
 turn_odd = 0.1;
