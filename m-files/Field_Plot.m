@@ -41,21 +41,21 @@ colormap(jet);
 
 %Plot Field_2: (plus base and Food)
 subplot(1,1,1);
-image(Field_2);
+image(Phero_Field_Base);
 hold on
-for i = 1:m
-    if carries_food(i) == 0
-        plot(pos(2,i),pos(1,i),'kx');
+for i = 1:nr_ants
+    if carrying_food(i) == 0
+        plot(std_ants(2,i),std_ants(1,i),'kx');
         hold on
     else
-        plot(pos(2,i),pos(1,i),'ro');
+        plot(std_ants(2,i),std_ants(1,i),'ro');
         hold on
     end
 end
-plot(base(2),base(1),'gd');
+plot(std_ant_init(2),std_ant_init(1),'gd');
 hold on
-plot(food(2),food(1),'ys');
+plot(std_food(2),std_food(1),'ys');
 hold off
-text(1,-4,['Food-counter=',num2str(food_counter)]);
-text(50,-4,['Total of carriing Ants=',num2str(sum(carries_food))]);
+text(1,-4,['Food-counter=',num2str(food_count)]);
+text(50,-4,['Total of carrying Ants=',num2str(sum(carrying_food))]);
 

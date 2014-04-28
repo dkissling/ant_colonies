@@ -10,7 +10,7 @@ Field_left = zeros(n+2,n+2);
 Field_left(2:n+1,1:n) = max(0,floor(Phero_Field_Food/2));
 
 % Lineare Abnahme bis 0
-Phero_Field_Food = max(Phero_Field_Food - 0.001*pheromon_maximum,0);
+Phero_Field_Food = max(Phero_Field_Food - 0.001*phero_max,0);
     
 Phero_Field_Food = max(Phero_Field_Food,Field_up(2:n+1,2:n+1));
 Phero_Field_Food = max(Phero_Field_Food,Field_right(2:n+1,2:n+1));

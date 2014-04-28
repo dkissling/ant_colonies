@@ -9,7 +9,7 @@ phi = ants_phi(Index);
 if carrying_food(Index) == 1
     
     % Findet zurück zur Base
-    if Field_Food_Base(location(1),location(2)) == 1
+    if Field_Base_Food(location(1),location(2)) == 1
         
         % Die Ameise kehrt in den Suchmodus zurück
         carrying_food(Index) = 0;
@@ -26,13 +26,13 @@ if carrying_food(Index) == 1
         % TODO:
         LookForBase;
         
-        pheromon_strength(Index) = max(pheromon_strength(Index) - 0.02*pheromon_maximum,0);
+        phero_strength(Index) = max(phero_strength(Index) - 0.02*phero_max,0);
     end
     
 else
     
     % Findet Nahrung
-    if Field_Food_Base(location(1),location(2)) == 2
+    if Field_Base_Food(location(1),location(2)) == 2
         
         %Die Ameise trägt nun Nahrung
         carrying_food(Index) = 1;
@@ -83,5 +83,5 @@ else
 end
 
 % Setzt den neuen Winkel
-phi(Index) = phi;
+ants_phi(Index) = phi;
 
