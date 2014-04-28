@@ -2,6 +2,7 @@
 % Gibt phi zurück
 % Vektor-Prinzip: sucht die zwei pheromon-maxima auf den umliegenden
 % feldern und versucht diesem vektor zu folgen:
+%%
 
 dir = [0;0];
 if max(location) < n && min(location) > 1
