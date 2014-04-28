@@ -67,4 +67,6 @@ plot(std_food(2),std_food(1),'ys');
 hold off
 text(1,-4,['Food-counter=',num2str(food_count)]);
 text(50,-4,['Total of carrying Ants=',num2str(sum(carrying_food))]);
+text(100,-4,['Time=',num2str(sum(time))]);
 
+clearvars i

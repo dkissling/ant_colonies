@@ -10,6 +10,7 @@
 
 % Grösse des Gitters
 n = 100;
+time = 0;
 
 
 % Position der Nahrungsquelle
@@ -95,4 +96,5 @@ while 1
     % Feld zeichnen
     Field_Plot;
     pause(0.05);
+    time = time + 1;
 end

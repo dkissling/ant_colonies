@@ -51,4 +51,4 @@ if max(dir) < n && min(dir) > 1
     end
 end
 phi = mod(phi,2);
-clearvars rel dir vector odd
+clearvars rel dir vector odd i j
