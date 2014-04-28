@@ -1,6 +1,6 @@
 % Ant-agent
 
-% loakale Position und Richtung
+% lokale Position und Richtung
 location = std_ants(1:2,Index);
 phi = ants_phi(Index);
 
@@ -25,6 +25,7 @@ if carrying_food(Index) == 1
         
         % TODO:
         LookForBase;
+        Phero_Field_Food(location(1),location(2)) = Phero_Field_Food(location(1),location(2)) + phero_strength(Index);
         
         phero_strength(Index) = max(phero_strength(Index) - 0.02*phero_max,0);
     end
@@ -38,7 +39,7 @@ else
         carrying_food(Index) = 1;
         
         %Die Pheromonstärke wird zurückgesetzt
-        phero_strength(Index) = 2 * phero_max;
+        phero_strength(Index) = phero_max;
         
         %Die Ameise wendet
         phi = mod(phi + 1,2);
@@ -49,6 +50,7 @@ else
         
         % TODO:
         LookForFood;
+        Phero_Field_Base(location(1),location(2)) = Phero_Field_Base(location(1),location(2)) + phero_strength(Index);
         
         %Die Pheromonstärke nimmt ab
         phero_strength(Index) = max(phero_strength(Index) - 0.02 * phero_max,0);        
@@ -57,10 +59,6 @@ else
     
 end
 
-
-% TODO:
-%Pheromonspur (während Suchvorgang):
-Phero_Field_Food(location(1),location(2)) = Phero_Field_Food(location(1),location(2)) + phero_strength(Index);
 
 
 
@@ -85,3 +83,4 @@ end
 % Setzt den neuen Winkel
 ants_phi(Index) = phi;
 
+clearvars phi location direction

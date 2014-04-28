@@ -30,17 +30,26 @@ colormap(jet);
 %hold off
 
 %Plot Field_1:
-%subplot(1,2,1);
-%image(Field_1);
-%hold on
-%for i = 1:m
-%	plot(pos(2,i),pos(1,i),'kx');
-%    hold on
-%end
-%hold off
+subplot(1,2,2);
+image(Phero_Field_Food);
+hold on
+for i = 1:nr_ants
+    if carrying_food(i) == 0
+        plot(std_ants(2,i),std_ants(1,i),'kx');
+        hold on
+    else
+        plot(std_ants(2,i),std_ants(1,i),'ro');
+        hold on
+    end
+end
+plot(std_ant_init(2),std_ant_init(1),'gd');
+hold on
+plot(std_food(2),std_food(1),'ys');
+hold off
+
 
 %Plot Field_2: (plus base and Food)
-subplot(1,1,1);
+subplot(1,2,1);
 image(Phero_Field_Base);
 hold on
 for i = 1:nr_ants
