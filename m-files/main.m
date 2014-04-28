@@ -80,7 +80,7 @@ SetPheromons;
 while 1 
     
     % Regelt Pheromonabnahme / -verbreitung
-    PheromonModel; 
+    %PheromonModel; 
     
     
     for Index = 1:nr_ants
