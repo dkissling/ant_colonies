@@ -23,7 +23,8 @@ if carrying_food(Index) == 1
         phero_strength(Index) = phero_max;
     else
         
-        %LookForBase
+        % TODO:
+        LookForBase;
         
         pheromon_strength(Index) = max(pheromon_strength(Index) - 0.02*pheromon_maximum,0);
     end
@@ -46,25 +47,18 @@ else
     % Hat noch keine Nahrung gefunden
     else
         
-        % LookForFood
+        % TODO:
+        LookForFood;
         
         %Die Pheromonstärke nimmt ab
-        phero_strength(Index) = max(phero_strength(Index) - 0.02 * phero_max,0);
-        
-        % Laufe zufällig weiter
-        
+        phero_strength(Index) = max(phero_strength(Index) - 0.02 * phero_max,0);        
         
     end
     
 end
 
 
-
-FollowTrail2;
-
-
-
-
+% TODO:
 %Pheromonspur (während Suchvorgang):
 Phero_Field_Food(location(1),location(2)) = Phero_Field_Food(location(1),location(2)) + phero_strength(Index);
 

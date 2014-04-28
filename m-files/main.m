@@ -57,8 +57,11 @@ phero_max = 5;
 % Pheromonstaerke individuell pro Ant-agent
 phero_strength = phero_max * ones(1,nr_ants);
 
-% Pheromongitter
+% Pheromongitter Nahrung
 Phero_Field_Food = zeros(n);
+
+% Pheromongitter Basis
+Phero_Field_Base = zeros(n);
 
 % Nahrung und Base (Umgebende Pheromone)
 Field_Base_Food = zeros(n);
@@ -82,7 +85,7 @@ while 1
     for Index = 1:nr_ants
         
         % Ant-agent ausführen
-        AntWalk;
+        AntAgent;
         
         % (Gegner ausführen)
         % ...
