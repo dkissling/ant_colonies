@@ -1,22 +1,21 @@
-% Zellulärer Automat zur Simulation der Pheromone
+% Zellulaerer Automat zur Simulation der Pheromone
 
-Field_u = zeros(n+2,n+2);
-Field_u(1:n,2:n+1) = max(0,floor(Field_2/2));
-Field_r = zeros(n+2,n+2);
-Field_r(2:n+1,3:n+2) = max(0,floor(Field_2/2));
-Field_d = zeros(n+2,n+2);
-Field_d(3:n+2,2:n+1) = max(0,floor(Field_2/2));
-Field_l = zeros(n+2,n+2);
-Field_l(2:n+1,1:n) = max(0,floor(Field_2/2));
+Field_up = zeros(n+2,n+2);
+Field_up(1:n,2:n+1) = max(0,floor(Phero_Field_Food/2));
+Field_right = zeros(n+2,n+2);
+Field_right(2:n+1,3:n+2) = max(0,floor(Phero_Field_Food/2));
+Field_down = zeros(n+2,n+2);
+Field_down(3:n+2,2:n+1) = max(0,floor(Phero_Field_Food/2));
+Field_left = zeros(n+2,n+2);
+Field_left(2:n+1,1:n) = max(0,floor(Phero_Field_Food/2));
 
 % Lineare Abnahme bis 0
-%Field_1 = Field_1 -1;
-Field_2 = max(Field_2 - 0.001*pheromon_maximum,0);
+Phero_Field_Food = max(Phero_Field_Food - 0.001*pheromon_maximum,0);
     
-Field_2 = max(Field_2,Field_u(2:n+1,2:n+1));
-Field_2 = max(Field_2,Field_r(2:n+1,2:n+1));
-Field_2 = max(Field_2,Field_d(2:n+1,2:n+1));
-Field_2 = max(Field_2,Field_l(2:n+1,2:n+1));
+Phero_Field_Food = max(Phero_Field_Food,Field_up(2:n+1,2:n+1));
+Phero_Field_Food = max(Phero_Field_Food,Field_right(2:n+1,2:n+1));
+Phero_Field_Food = max(Phero_Field_Food,Field_down(2:n+1,2:n+1));
+Phero_Field_Food = max(Phero_Field_Food,Field_left(2:n+1,2:n+1));
 
 
-
+clearvars Field_up Field_down Field_left Field_right;
