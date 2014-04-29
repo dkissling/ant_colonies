@@ -24,7 +24,7 @@ if carrying_food(Index) == 1
     else
         
         % TODO:
-        LookForBase2;
+        LookForBase3;
         Phero_Field_Food(location(1),location(2)) = Phero_Field_Food(location(1),location(2)) + phero_strength(Index);
         
         phero_strength(Index) = max(phero_strength(Index) - 0.02*phero_max,0);
@@ -49,7 +49,7 @@ else
     else
         
         % TODO:
-        LookForFood2;
+        LookForFood3;
         Phero_Field_Base(location(1),location(2)) = Phero_Field_Base(location(1),location(2)) + phero_strength(Index);
         
         %Die Pheromonstärke nimmt ab
